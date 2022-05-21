@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, public snackBar: MatSnackBar) { }
 
   public user={
     username: '',
@@ -19,6 +21,8 @@ export class SignupComponent implements OnInit {
     mobile: '',
   }
 
+  
+
   ngOnInit(): void {
   }
 
@@ -28,12 +32,12 @@ export class SignupComponent implements OnInit {
       (data)=>{
         // success
         console.log(data)
-        alert("success")
+        swal("Success", "User registered successfully", "success")
       },
       (error)=>{
         // error
         console.log(error)
-        alert("error")
+        this.snackBar.open("An error occured while registering user", "", {duration:2000})
       }
     )
   }
