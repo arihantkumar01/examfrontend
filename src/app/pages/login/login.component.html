@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="boostrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <div class="container img-center">
+                    <img src="../../../assets/gautam_budhha" class="rounded" alt="" style="height: 80px;">
+                </div>
+
+                <h1 class="text-center">Login Here</h1>
+
+                <form action=""autocomplete="off">
+                    <p>
+                        <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input required matInput placeholder="">
+                        <mat-hint>Enter valid username</mat-hint>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input required type="password" matInput placeholder="">
+                        </mat-form-field>
+                    </p>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                        <button mat-raised-button color="accent" style="margin-left: 10px;">Forgot password</button>
+                    </div>
+                </form>
+            </mat-card>    
+            </div>
+        </div>
+    </div>
+</div>
